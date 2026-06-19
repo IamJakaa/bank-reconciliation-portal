@@ -57,3 +57,28 @@ st.markdown(
 )
 
 st.info("💡 **Next Step:** I am looking forward to seeing your proposals so we can collaborate on the final design!")
+
+
+st.markdown(
+    """
+    <style>
+    /* Absolute target on any element with a viewerBadge attribute */
+    div[class*="viewerBadge"], 
+    a[class*="viewerBadge"], 
+    iframe + div, 
+    .stAppDeployDropdown,
+    [data-testid="stStatusWidget"] {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0px !important;
+    }
+    
+    /* Clean up bottom spacing */
+    footer {
+        visibility: hidden !important;
+        display: none !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
