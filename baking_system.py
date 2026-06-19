@@ -7,23 +7,38 @@ st.set_page_config(
     layout="wide"
 )
 
+# --- MASTER CSS OVERRIDE TO FORCE BRANDING DELETION ---
 st.markdown(
     """
     <style>
-    /* Hide top menu bar completely */
-    #MainMenu {visibility: hidden;}
-    header {visibility: hidden;}
+    /* 1. Target and strip the top main header and digital menu bar */
+    header, [data-testid="stHeader"] {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0px !important;
+    }
     
-    /* Hide bottom footer completely */
-    footer {visibility: hidden;}
+    /* 2. Strip default footer margins */
+    footer {
+        display: none !important;
+        visibility: hidden !important;
+    }
     
-    /* Force-hide any floating hosting badges or viewer elements at the bottom right */
-    [data-testid="stConnectionStatus"],
-    div[class^="viewerBadge"],
-    a[class^="viewerBadge"],
-    div[class*="viewerBadge"],
+    /* 3. Universal target rule to completely wipe the red crown badge */
+    [class*="viewerBadge"], 
+    [class*="DeployDropdown"],
+    [data-testid="stAppDeployDropdown"],
     .stAppDeployDropdown {
         display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0px !important;
+        height: 0px !important;
+    }
+    
+    /* 4. Shift page content up to fill the empty header gap */
+    .block-container {
+        padding-top: 2rem !important;
     }
     </style>
     """,
@@ -59,26 +74,3 @@ st.markdown(
 st.info("💡 **Next Step:** I am looking forward to seeing your proposals so we can collaborate on the final design!")
 
 
-st.markdown(
-    """
-    <style>
-    /* Absolute target on any element with a viewerBadge attribute */
-    div[class*="viewerBadge"], 
-    a[class*="viewerBadge"], 
-    iframe + div, 
-    .stAppDeployDropdown,
-    [data-testid="stStatusWidget"] {
-        display: none !important;
-        visibility: hidden !important;
-        height: 0px !important;
-    }
-    
-    /* Clean up bottom spacing */
-    footer {
-        visibility: hidden !important;
-        display: none !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
