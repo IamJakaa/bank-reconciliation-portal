@@ -7,6 +7,18 @@ st.set_page_config(
     layout="wide"
 )
 
+st.markdown(
+    """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .viewerBadge_link__1S137 {display: none !important;}
+    </style>
+    """,
+    unsafe_set_html=True
+)
+
 
 try:
     conn = st.connection("postgresql", type="sql")
