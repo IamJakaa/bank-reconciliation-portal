@@ -15,6 +15,22 @@ except Exception as e:
     st.stop()
 
 # 3. Main Dashboard Headers
+
 st.title("🏦 Automated Bank Reconciliation & Audit Portal")
 st.caption("Ouk Capstone Project Production Pipeline")
 st.markdown("---")
+
+st.write("") 
+st.success("📢 **PROPOSAL PRESENTATION FOR MY FELLOW STUDENTS**")
+
+
+st.subheader("👥 Team Reviewers: Jim, Daniel, and Wafula")
+
+st.markdown(
+    """
+    ### 🚀 Project Architecture Proposal
+    I have initialized this live environment to demonstrate my proposal core data-driven pipeline. 
+    """
+)
+
+st.info("💡 **Next Step:** I am looking forward to seeing your proposals so we can collaborate on the final design!")
