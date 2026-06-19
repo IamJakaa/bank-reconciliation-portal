@@ -16,7 +16,7 @@ st.markdown(
     .viewerBadge_link__1S137 {display: none !important;}
     </style>
     """,
-    unsafe_set_html=True
+    unsafe_allow_html=True
 )
 
 
