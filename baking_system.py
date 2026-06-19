@@ -10,10 +10,21 @@ st.set_page_config(
 st.markdown(
     """
     <style>
+    /* Hide top menu bar completely */
     #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
     header {visibility: hidden;}
-    .viewerBadge_link__1S137 {display: none !important;}
+    
+    /* Hide bottom footer completely */
+    footer {visibility: hidden;}
+    
+    /* Force-hide any floating hosting badges or viewer elements at the bottom right */
+    [data-testid="stConnectionStatus"],
+    div[class^="viewerBadge"],
+    a[class^="viewerBadge"],
+    div[class*="viewerBadge"],
+    .stAppDeployDropdown {
+        display: none !important;
+    }
     </style>
     """,
     unsafe_allow_html=True
